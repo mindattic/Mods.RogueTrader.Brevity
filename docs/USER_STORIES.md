@@ -1,6 +1,6 @@
 ---
 codex: 1
-project: RogueTrader.Brevity
+project: Mods.RogueTrader.Brevity
 code: RTB
 layer: stories
 status: living
@@ -8,7 +8,7 @@ updated: 2026-10-24
 ---
 <!-- GENERATED from MindAttic.Tickets/data/Tickets.db by `tickets db render`. Do not edit: this file is rewritten from the database; change stories and tickets with the tickets CLI. -->
 
-# RogueTrader.Brevity — User Stories
+# Mods.RogueTrader.Brevity — User Stories
 > ✅ done (shipped & tested) · 🟡 partial · ⬜ planned. Every ✅ cites the test.
 
 ## Priority backlog
@@ -278,3 +278,4 @@ _Nothing recorded yet._
 | RTB-T255 | 2026-10-26 | docs | open | Retake the Nexus before/after screenshots so they show the 3.0.0 polished text instead of the old stilted lines | — |
 | RTB-T256 | 2026-10-26 | fix | closed | Vortex deploy put the Nexus 2.0.0 files back over the built 3.0.0 mod; the build now also refreshes Vortex's staged copy so either deploy ships the latest version | dotnet build src/BrevityMod: Vortex staged simplified.json hash matches .brevity |
 | RTB-T257 | 2026-10-27 | chore | closed | Add 24 file(s); Update 5 file(s); Remove 11 file(s) | — |
+| RTB-T258 | 2026-11-01 | chore | open | Rename repo to Mods.RogueTrader.Brevity for mod organization (GitHub + folder + refs) | — |
