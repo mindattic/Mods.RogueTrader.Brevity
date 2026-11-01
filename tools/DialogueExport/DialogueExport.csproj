@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <!-- Game paths and the shared blueprint reader come from RogueTrader.Shared, checked out next to this repo. -->
+  <!-- Game paths and the shared blueprint reader come from Mods.RogueTrader.Shared, checked out next to this repo. -->
   <PropertyGroup>
-    <RogueTraderShared Condition="'$(RogueTraderShared)' == '' and Exists('$(MSBuildThisFileDirectory)..\..\..\RogueTrader.Shared')">$(MSBuildThisFileDirectory)..\..\..\RogueTrader.Shared</RogueTraderShared>
+    <RogueTraderShared Condition="'$(RogueTraderShared)' == '' and Exists('$(MSBuildThisFileDirectory)..\..\..\Mods.RogueTrader.Shared')">$(MSBuildThisFileDirectory)..\..\..\Mods.RogueTrader.Shared</RogueTraderShared>
     <!-- From a worktree under <repo>\.worktrees\<name> the sibling checkout is two levels further up. -->
-    <RogueTraderShared Condition="'$(RogueTraderShared)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\..\RogueTrader.Shared</RogueTraderShared>
+    <RogueTraderShared Condition="'$(RogueTraderShared)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\..\Mods.RogueTrader.Shared</RogueTraderShared>
   </PropertyGroup>
   <Import Project="$(RogueTraderShared)\RogueTrader.Tools.props" />
 
