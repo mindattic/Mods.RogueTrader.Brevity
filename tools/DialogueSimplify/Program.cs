@@ -230,7 +230,12 @@ void Apply(Chunk c, Message msg)
 void ApplyJson(Chunk c, string json)
 {
     Dictionary<string, string> outById;
-    try { outById = JsonSerializer.Deserialize<Reply>(json, jsonOpts)!.Lines.GroupBy(x => x.Id).ToDictionary(g => g.Key, g => g.First().Text); }
+    try
+    {
+        // A hand-written --import reply can be "null", lack "lines" or hold null entries/ids; reject it like any bad reply.
+        var reply = JsonSerializer.Deserialize<Reply>(json, jsonOpts)?.Lines ?? throw new JsonException("no lines");
+        outById = reply.Where(x => x?.Id is not null).GroupBy(x => x.Id).ToDictionary(g => g.Key, g => g.First().Text);
+    }
     catch (JsonException) { Count("unparseable reply", c.Lines.Count); return; }
 
     for (var i = 0; i < c.Lines.Count; i++)

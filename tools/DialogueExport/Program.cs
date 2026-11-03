@@ -110,9 +110,9 @@ Console.WriteLine($"wrote {written.Count:N0} lines ({words:N0} words, {voicedWor
 static Dictionary<string, string> ParseArgs(string[] args)
 {
     var d = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-    for (var i = 0; i + 1 < args.Length; i += 2)
+    for (var i = 0; i < args.Length; i += 2)
     {
-        if (!args[i].StartsWith("--")) throw new ArgumentException($"Unexpected argument '{args[i]}'. Use --game, --blueprints, --out.");
+        if (!args[i].StartsWith("--") || i + 1 == args.Length) throw new ArgumentException($"Unexpected argument '{args[i]}'. Use --game, --blueprints, --out.");
         d[args[i][2..]] = args[i + 1];
     }
     return d;

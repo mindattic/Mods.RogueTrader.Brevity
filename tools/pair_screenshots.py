@@ -26,13 +26,18 @@ def read_examples():
     for line in (ROOT / "examples.md").read_text(encoding="utf-8").splitlines():
         if m := SECTION.match(line):
             current = lines.setdefault((m["dialog"], m["cue"]), {})
-            state = m["state"]
+            state, entries = m["state"], 0
         elif current is None:
             continue
         elif m := IMAGE.match(line):
             current.setdefault(state + "_all", []).append(m["path"])
-        elif line.startswith("- **") and "who" not in current:
-            current["who"] = line[4:line.index("**", 4)]
+        elif line.startswith("- **"):
+            # The section's first entry is the cue; the ones after it are its answers.
+            entries += 1
+            if "who" not in current:
+                current["who"] = line[4:line.index("**", 4)]
+        elif entries != 1:
+            continue
         elif (m := WORDS.match(line)) and m["which"] == "Original":
             current.setdefault("orig", (int(m["n"]), m["text"]))
         elif m := WORDS.match(line):
