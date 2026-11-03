@@ -64,7 +64,12 @@ foreach (var dialog in nodes.Values.Where(n => n.Kind == "BlueprintDialog").Orde
             if (node.Fail is not null) queue.Enqueue((node.Fail, carryKey, $"{node.CheckType} {node.Dc} fail"));
             continue;
         }
-        foreach (var next in node.Next) queue.Enqueue((next, carryKey, null));
+        // RTB-T261: a check's outcome label passes through non-text nodes (a CueSequence's cues, an
+        // AnswersList's answers) to the first lines they lead to; a text node ends it. A sequence's
+        // m_Exit is what follows the outcome, so it doesn't inherit the label.
+        var carryCheck = isText ? null : check;
+        foreach (var next in node.Next) queue.Enqueue((next, carryKey, carryCheck));
+        if (node.Exit is not null) queue.Enqueue((node.Exit, carryKey, null));
     }
 }
 
@@ -96,7 +101,8 @@ using (var w = new StreamWriter(outPath, false, new UTF8Encoding(false)))
             blueprint = n.Path,
             speaker,
             prevKey = v?.PrevKey,
-            check = v?.Check ?? n.ShowCheck,
+            // RTB-T261: an answer's own skill check (ShowCheck) wins over an outcome label carried to it.
+            check = n.Kind == "BlueprintAnswer" ? n.ShowCheck ?? v?.Check : v?.Check ?? n.ShowCheck,
             soulMarkShift = n.SoulShift,
             soulMarkRequirement = n.SoulRequirement,
             voiced = isVoiced,
@@ -137,7 +143,7 @@ sealed class Node
 
     public required string Kind, Id, Path;
     public bool Deleted, IsNarrator;
-    public string? TextKey, SpeakerRef, ShowCheck, SoulShift, SoulRequirement, Success, Fail, CheckType, Dc;
+    public string? TextKey, SpeakerRef, ShowCheck, SoulShift, SoulRequirement, Success, Fail, CheckType, Dc, Exit;
     public List<string> Next = [];
 
     public static Node From(string kind, string id, string path, JsonElement d, bool deleted)
@@ -148,7 +154,7 @@ sealed class Node
             case "BlueprintDialog": n.AddRefs(d, "FirstCue", "Cues"); break;
             case "BlueprintBookPage": n.AddRefs(d, "Cues"); n.AddRefs(d, "Answers"); goto case "BlueprintCue";
             case "BlueprintAnswersList": n.AddRefs(d, "Answers"); break;
-            case "BlueprintCueSequence": n.AddRefs(d, "Cues"); n.AddRef(d, "m_Exit"); break;
+            case "BlueprintCueSequence": n.AddRefs(d, "Cues"); n.Exit = Ref(d, "m_Exit"); break;
             case "BlueprintCheck":
                 n.Success = Ref(d, "m_Success");
                 n.Fail = Ref(d, "m_Fail");
