@@ -283,4 +283,6 @@ _Nothing recorded yet._
 | RTB-T260 | 2026-11-02 | fix | closed | Bughunt sweep, two passes: find and fix real bugs across tracked source (user request 2026-11-02) | — |
 | RTB-T261 | 2026-11-02 | fix | closed | Fix the open item the 2026-11-02 bughunt left for decision (DialogueExport carries the skill-check label to cue/answer nodes without mislabelling answers' own checks) | — |
 | RTB-T262 | 2026-11-04 | fix | open | Save load crash: LoadGameException failed to load blueprint by guid f09f0c2891084ad2abc5bd8113a0eb80 | — |
-| RTB-T263 | 2026-11-06 | feature | open | Add .github/workflows/publish.yml using Nexus-Mods/upload-action to push a new file version to the mod's Nexus page (mod 651) on release, plus nexus.json config for the local /publish fallback | — |
+| RTB-T263 | 2026-11-06 | feature | closed | Add .github/workflows/publish.yml using Nexus-Mods/upload-action to push a new file version to the mod's Nexus page (mod 651) on release, plus nexus.json config for the local /publish fallback | f427c8b |
+| RTB-T264 | 2026-11-06 | chore | closed | Set NEXUSMODS_API_KEY GitHub secret for publish workflow | — |
+| RTB-T265 | 2026-11-06 | chore | open | Set real Nexus fileId (2661) in nexus.json | — |
