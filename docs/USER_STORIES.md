@@ -286,4 +286,5 @@ _Nothing recorded yet._
 | RTB-T263 | 2026-11-06 | feature | closed | Add .github/workflows/publish.yml using Nexus-Mods/upload-action to push a new file version to the mod's Nexus page (mod 651) on release, plus nexus.json config for the local /publish fallback | f427c8b |
 | RTB-T264 | 2026-11-06 | chore | closed | Set NEXUSMODS_API_KEY GitHub secret for publish workflow | — |
 | RTB-T265 | 2026-11-06 | chore | closed | Set real Nexus fileId (2661) in nexus.json | 6945469 |
-| RTB-T266 | 2026-11-06 | chore | open | Seed .publish-state.json baseline for /publish no-op guard | — |
+| RTB-T266 | 2026-11-06 | chore | closed | Seed .publish-state.json baseline for /publish no-op guard | 025eb71 |
+| RTB-T267 | 2026-11-10 | chore | closed | Crash recovery: commit the command-catalog sync (.agent/commands/*.md) and regenerated docs/USER_STORIES.md left uncommitted by the session crash | — |
