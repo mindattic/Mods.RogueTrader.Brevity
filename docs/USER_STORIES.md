@@ -279,7 +279,7 @@ _Nothing recorded yet._
 | RTB-T256 | 2026-10-26 | fix | closed | Vortex deploy put the Nexus 2.0.0 files back over the built 3.0.0 mod; the build now also refreshes Vortex's staged copy so either deploy ships the latest version | dotnet build src/BrevityMod: Vortex staged simplified.json hash matches .brevity |
 | RTB-T257 | 2026-10-27 | chore | closed | Add 24 file(s); Update 5 file(s); Remove 11 file(s) | — |
 | RTB-T258 | 2026-11-01 | chore | closed | Rename repo to Mods.RogueTrader.Brevity for mod organization (GitHub + folder + refs) | f6d5a2e64deb6b19d7089b0e6dcade87defc434e |
-| RTB-T259 | 2026-11-02 | docs | open | Adopt MindAttic.Agency docs-site pipeline, publish README to GitHub Pages (HOUSE-LAW-14) | — |
+| RTB-T259 | 2026-11-02 | docs | closed | Adopt MindAttic.Agency docs-site pipeline, publish README to GitHub Pages (HOUSE-LAW-14) | — |
 | RTB-T260 | 2026-11-02 | fix | closed | Bughunt sweep, two passes: find and fix real bugs across tracked source (user request 2026-11-02) | — |
 | RTB-T261 | 2026-11-02 | fix | closed | Fix the open item the 2026-11-02 bughunt left for decision (DialogueExport carries the skill-check label to cue/answer nodes without mislabelling answers' own checks) | — |
 | RTB-T262 | 2026-11-04 | fix | open | Save load crash: LoadGameException failed to load blueprint by guid f09f0c2891084ad2abc5bd8113a0eb80 | — |
@@ -288,3 +288,5 @@ _Nothing recorded yet._
 | RTB-T265 | 2026-11-06 | chore | closed | Set real Nexus fileId (2661) in nexus.json | 6945469 |
 | RTB-T266 | 2026-11-06 | chore | closed | Seed .publish-state.json baseline for /publish no-op guard | 025eb71 |
 | RTB-T267 | 2026-11-10 | chore | closed | Crash recovery: commit the command-catalog sync (.agent/commands/*.md) and regenerated docs/USER_STORIES.md left uncommitted by the session crash | — |
+| RTB-T268 | 2026-11-10 | chore | closed | Adopt the shared docs-site pipeline: turn on GitHub Pages | — |
+| RTB-T269 | 2026-11-17 | docs | closed | Update USER_STORIES.md | — |
