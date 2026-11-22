@@ -290,3 +290,5 @@ _Nothing recorded yet._
 | RTB-T267 | 2026-11-10 | chore | closed | Crash recovery: commit the command-catalog sync (.agent/commands/*.md) and regenerated docs/USER_STORIES.md left uncommitted by the session crash | — |
 | RTB-T268 | 2026-11-10 | chore | closed | Adopt the shared docs-site pipeline: turn on GitHub Pages | — |
 | RTB-T269 | 2026-11-17 | docs | closed | Update USER_STORIES.md | — |
+| RTB-T270 | 2026-11-20 | feature | wont-do | Add per-locale reduction (same 20-40% band as English) for all 7 non-English official languages, built from each locale's own official text | — |
+| RTB-T271 | 2026-11-22 | docs | closed | 2026-11-22 morning | — |
