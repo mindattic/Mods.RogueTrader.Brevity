@@ -3,7 +3,7 @@
 Usage: python -I tools/capture_dialogue.py   (start it before or after the game; Ctrl+C stops it)
 
 Follows the game's GameLogFull.txt. Each time a cue finishes drawing, it takes a screenshot of the game window
-with MindAttic.Capture (capture.exe shot) and adds an entry to examples.md next to the screenshots: the
+with MindAttic.Media.Capture (capture.exe shot) and adds an entry to examples.md next to the screenshots: the
 picture, whether the mod was on, and the cue's and answers' original and shortened text from
 dialogue.jsonl and the installed simplified.json.
 """
@@ -107,7 +107,7 @@ def describe(rows, short, dialog, name):
 
 def main():
     if not CAPTURE.exists():
-        sys.exit(f"capture.exe not found at {CAPTURE}; run MindAttic.Capture's run.ps1")
+        sys.exit(f"capture.exe not found at {CAPTURE}; run MindAttic.Media.Capture's run.ps1")
     rows = load_lines()
     short = json.load(open(SHORT, encoding="utf-8"))
     OUT.mkdir(parents=True, exist_ok=True)
