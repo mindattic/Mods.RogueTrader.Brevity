@@ -1,6 +1,6 @@
 """Pair capture_dialogue.py's mod-on and mod-off screenshots of the same line into comparison images.
 
-Usage: python -I tools/pair_screenshots.py [capture folder]   (default R:\\MindAttic\\Capture\\RogueTraderBrevity)
+Usage: python -I tools/pair_screenshots.py [capture folder]   (default R:\MindAttic\Media\Capture\RogueTraderBrevity; old root if only that exists)
 
 Reads examples.md, takes the first mod-off and first mod-on screenshot of each line, and writes
 pairs/NN_<dialog>_<cue>.png: the dialogue panel with the original text above the shortened one.
