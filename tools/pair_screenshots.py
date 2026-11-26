@@ -10,7 +10,9 @@ import re, sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else r"R:\MindAttic\Capture\RogueTraderBrevity")
+_NEW = Path(r"R:\MindAttic\Media\Capture\RogueTraderBrevity")
+_OLD = Path(r"R:\MindAttic\Capture\RogueTraderBrevity")  # pre-Media root, one-release fallback
+ROOT = Path(sys.argv[1]) if len(sys.argv) > 1 else (_OLD if not _NEW.exists() and _OLD.exists() else _NEW)
 # The dialogue panel's share of the window height (title bar included): the scene above it is cropped away.
 PANEL_TOP, PANEL_BOTTOM = 0.635, 0.985
 LABEL_HEIGHT = 44

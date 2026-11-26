@@ -15,7 +15,10 @@ GAME_DATA = Path(os.environ["USERPROFILE"]) / "AppData/LocalLow/Owlcat Games/War
 LOG = GAME_DATA / "GameLogFull.txt"
 SHORT = GAME_DATA / "UnityModManager/RogueTraderBrevity/simplified.json"
 CAPTURE = Path(os.environ["LOCALAPPDATA"]) / "MindAttic/Capture/bin/capture.exe"
-OUT = Path(r"R:\MindAttic\Capture\RogueTraderBrevity")
+OUT = Path(r"R:\MindAttic\Media\Capture\RogueTraderBrevity")
+OLD_OUT = Path(r"R:\MindAttic\Capture\RogueTraderBrevity")  # pre-Media root, kept as a one-release fallback
+if not OUT.exists() and OLD_OUT.exists():
+    OUT = OLD_OUT
 # Give the dialogue panel a moment to finish its fade-in before the shot.
 SETTLE_SECONDS = 0.8
 
