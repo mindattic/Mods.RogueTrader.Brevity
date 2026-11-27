@@ -282,7 +282,7 @@ _Nothing recorded yet._
 | RTB-T259 | 2026-11-02 | docs | closed | Adopt MindAttic.Agency docs-site pipeline, publish README to GitHub Pages (HOUSE-LAW-14) | — |
 | RTB-T260 | 2026-11-02 | fix | closed | Bughunt sweep, two passes: find and fix real bugs across tracked source (user request 2026-11-02) | — |
 | RTB-T261 | 2026-11-02 | fix | closed | Fix the open item the 2026-11-02 bughunt left for decision (DialogueExport carries the skill-check label to cue/answer nodes without mislabelling answers' own checks) | — |
-| RTB-T262 | 2026-11-04 | fix | open | Save load crash: LoadGameException failed to load blueprint by guid f09f0c2891084ad2abc5bd8113a0eb80 | — |
+| RTB-T262 | 2026-11-04 | fix | wont-do | Save load crash: LoadGameException failed to load blueprint by guid f09f0c2891084ad2abc5bd8113a0eb80 | portfolio reset: investigated 2026-11-05, Brevity only overlays localization text and cannot cause a blueprint-load failure; no repro (likely ToyBox) |
 | RTB-T263 | 2026-11-06 | feature | closed | Add .github/workflows/publish.yml using Nexus-Mods/upload-action to push a new file version to the mod's Nexus page (mod 651) on release, plus nexus.json config for the local /publish fallback | f427c8b |
 | RTB-T264 | 2026-11-06 | chore | closed | Set NEXUSMODS_API_KEY GitHub secret for publish workflow | — |
 | RTB-T265 | 2026-11-06 | chore | closed | Set real Nexus fileId (2661) in nexus.json | 6945469 |
@@ -292,3 +292,12 @@ _Nothing recorded yet._
 | RTB-T269 | 2026-11-17 | docs | closed | Update USER_STORIES.md | — |
 | RTB-T270 | 2026-11-20 | feature | wont-do | Add per-locale reduction (same 20-40% band as English) for all 7 non-English official languages, built from each locale's own official text | — |
 | RTB-T271 | 2026-11-22 | docs | closed | 2026-11-22 morning | — |
+| RTB-T272 | 2026-11-24 | fix | wont-do | Hunt the whole repo for real bugs with no time limit and fix every confirmed one | portfolio reset: open-ended bughunt loop; mod is live and working |
+| RTB-T273 | 2026-11-24 | chore | closed | Mods.RogueTrader.Brevity tooling names MindAttic.Media.Capture | children done |
+| RTB-T274 | 2026-11-24 | chore | closed | Mods.RogueTrader.Brevity tools/capture_dialogue.py docstring (~6) says MindAttic.Media.Capture; the capture.exe path it runs is unchanged | 0836a77 |
+| RTB-T275 | 2026-11-24 | chore | closed | capture_dialogue.py writes to and pair_screenshots.py reads from R:\MindAttic\Media\Capture\RogueTraderBrevity (old root one-release fallback) | 58d340f |
+| RTB-T276 | 2026-11-26 | feature | open | Mods.RogueTrader.Brevity: add .agent\publish.json (kind dotnet) naming its exe projects tools\DialogueExport and tools\DialogueSimplify (BrevityMod is the in-game mod DLL and stays on the Nexus flow) so Get-Plan no longer skips it for its nexus.json, add the shared run menu, run Redeploy, and confirm both exes land and run in R:\MindAttic\Apps\Mods.RogueTrader.Brevity\{Debug,Release}. Outcome: both exes exist in both folders and start | — |
+| RTB-T277 | 2026-11-27 | feature | open | Before/after screenshots that show the 3.0.0 polished text, on the live Nexus page | — |
+| RTB-T278 | 2026-11-27 | feature | open | Retaken in-game before/after screenshot pairs showing the 3.0.0 text | — |
+| RTB-T279 | 2026-11-27 | feature | open | The retaken screenshots replace the old ones on the live Nexus page | — |
+| RTB-T280 | 2026-11-27 | docs | open | Replace the before/after images on Nexus mod 651 with the retaken 3.0.0 pairs from RTB-T255 and update the Images section of docs/NEXUS_PAGE.md to match | — |
